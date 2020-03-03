@@ -1,0 +1,49 @@
+server:
+  port: 8888
+
+github:
+  client:
+    id: b675661f86d5de20d997
+    secret: 7c8c1f8ec9b370ca848b74b5b5440ea543ca9b4e
+  redirect:
+    uri: http://localhost:8888/callback
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/community?characterEncoding=UTF8
+    #    url: jdbc:h2:D:/community
+    #    driver-class-name: org.h2.Driver
+    username: root
+    password: root
+
+#spring:
+#  datasource:
+#    #Druid\u8FDE\u63A5\u6C60
+#    druid:
+#      url: jdbc:mysql://localhost:3306/qingcheng_goods?characterEncoding=UTF8
+#      driver: com.mysql.jdbc.Driver
+#      username: root
+#      password: root
+#      initialSize: 5
+#      minIdle: 5
+#      maxActive: 20
+#      maxWait: 60000
+#      timeBetweenEvictionRunsMillis: 60000
+#      minEvictableIdleTimeMillis: 300000
+#      validationQuery: SELECT 1 FROM DUAL
+#      testWhileIdle: true
+#      testOnBorrow: false
+#      testOnReturn: false
+#      poolPreparedStatements: true
+#      maxPoolPreparedStatementPerConnectionSize: 20
+#      useGlobalDataSourceStat: true
+#      connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+#
+#mybatis:
+#  #mapper\u914D\u7F6E\u6587\u4EF6
+#  mapper-locations: classpath:mapper/*.xml
+#  type-aliases-package: com.cg.demo.community.model
+#  #\u5F00\u542F\u9A7C\u5CF0\u547D\u540D
+#  configuration:
+#    map-underscore-to-camel-case: true
