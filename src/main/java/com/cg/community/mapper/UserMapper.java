@@ -3,6 +3,7 @@ package com.cg.community.mapper;
 import com.cg.community.model.User;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Select;
 
 /**
  * (User)表数据库访问层
@@ -16,4 +17,6 @@ public interface UserMapper {
     @Insert("insert into user(account_id, name, token, gmt_create, gmt_modified) values (#{accountId}, #{name}, #{token}, #{gmtCreate}, #{gmtModified})")
     void insert(User user);
 
+    @Select("select * from user where user.token=#{token}")
+    User findByToken(String token);
 }
