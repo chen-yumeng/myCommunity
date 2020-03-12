@@ -31,14 +31,16 @@ public class IndexController {
     @GetMapping("/login")
     public String login(HttpServletRequest request) {
         Cookie[] cookies = request.getCookies();
-        for (Cookie cookie : cookies) {
-            if ("token".equals(cookie.getName())) {
-                User user = userMapper.findByToken(cookie.getValue());
-                if (user != null) {
-                    cookie.setMaxAge(3600);
-                    request.getSession().setAttribute("user", user);
+        if (cookies.length != 0) {
+            for (Cookie cookie : cookies) {
+                if ("token".equals(cookie.getName())) {
+                    User user = userMapper.findByToken(cookie.getValue());
+                    if (user != null) {
+                        cookie.setMaxAge(3600);
+                        request.getSession().setAttribute("user", user);
+                    }
+                    break;
                 }
-                break;
             }
         }
         return "index";

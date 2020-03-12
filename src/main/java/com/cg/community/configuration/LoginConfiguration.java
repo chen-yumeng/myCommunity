@@ -25,6 +25,9 @@ public class LoginConfiguration implements WebMvcConfigurer {
         interceptor.excludePathPatterns("/");
         interceptor.excludePathPatterns("/login");
         interceptor.excludePathPatterns("/callback");
+        interceptor.excludePathPatterns("/user/getUserIsLogin");
+        //TODO:开发期间临时登录方式
+        interceptor.excludePathPatterns("/user/login");
         // 排除资源请求
         interceptor.excludePathPatterns("/css/**");
         interceptor.excludePathPatterns("/js/**");

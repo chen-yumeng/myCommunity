@@ -27,4 +27,6 @@ public class User implements Serializable {
     private Long gmtCreate;
 
     private Long gmtModified;
+
+    private String avatarUrl;
 }
