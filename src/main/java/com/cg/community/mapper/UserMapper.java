@@ -4,6 +4,7 @@ import com.cg.community.model.User;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
+import org.springframework.stereotype.Component;
 
 /**
  * (User)表数据库访问层
@@ -11,6 +12,7 @@ import org.apache.ibatis.annotations.Select;
  * @author makejava
  * @since 2020-03-03 18:28:47
  */
+@Component
 @Mapper
 public interface UserMapper {
 

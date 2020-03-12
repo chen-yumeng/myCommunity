@@ -5,6 +5,7 @@ import com.cg.community.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
@@ -22,8 +23,13 @@ public class IndexController {
     @Autowired
     private UserMapper userMapper;
 
-    @GetMapping("/")
-    public String index(HttpServletRequest request) {
+    @RequestMapping("/")
+    public String index() {
+        return "index";
+    }
+
+    @GetMapping("/login")
+    public String login(HttpServletRequest request) {
         Cookie[] cookies = request.getCookies();
         for (Cookie cookie : cookies) {
             if ("token".equals(cookie.getName())) {
