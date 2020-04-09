@@ -3,6 +3,7 @@ package com.cg.community.dto;
 import lombok.Data;
 
 /**
+ * 接受Github返回的用户信息
  * @program: community->GithubUser
  * @description:
  * @author: cg

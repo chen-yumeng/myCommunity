@@ -3,6 +3,7 @@ package com.cg.community.dto;
 import lombok.Data;
 
 /**
+ * 接受GitHub的授权登录信息
  * @program: community->AccessTokenDto
  * @description:
  * @author: cg
