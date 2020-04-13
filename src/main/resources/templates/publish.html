@@ -51,7 +51,7 @@
         <div class="col-lg-9 col-md-12 col-sm-12">
             <h2><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>发起</h2>
             <hr>
-            <form action="/publish" method="post">
+            <form>
                 <div class="form-group">
                     <label for="title">问题标题 (简单扼要) :</label>
                     <input type="text" class="form-control" id="title" name="title" placeholder="问题标题...">
@@ -64,7 +64,7 @@
                     <label for="title">添加标签 :</label>
                     <input type="text" class="form-control" id="tag" name="tag" placeholder="输入标签，以逗号分隔">
                 </div>
-                <button type="submit" class="btn btn-success btn-publish">确认发起</button>
+                <button type="button" onclick="commit()" class="btn btn-success btn-publish">确认发起</button>
             </form>
         </div>
         <div class="col-lg-3 col-md-12 col-sm-12">
@@ -78,5 +78,29 @@
         </div>
     </div>
 </div>
+<script type="text/javascript">
+    function commit() {
+        let title = $("#title").val();
+        let description = $("#description").val();
+        let tag = $("#tag").val();
+        $.ajax({
+            type: "post",
+            url: "/publish",
+            data: JSON.stringify({
+                "title": title,
+                "description": description,
+                "tag": tag
+            }),
+            contentType: "application/json;charset=UTF-8",
+            dataType: "json",
+            success: function (data) {
+                console.log(data);
+            },
+            error: function (e) {
+                console.log(e);
+            }
+        })
+    }
+</script>
 </body>
 </html>

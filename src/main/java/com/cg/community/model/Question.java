@@ -2,6 +2,7 @@ package com.cg.community.model;
 
 import lombok.Data;
 
+import javax.validation.constraints.NotBlank;
 import java.io.Serializable;
 
 /**
@@ -16,8 +17,10 @@ public class Question implements Serializable {
 
     private Integer id;
 
+    @NotBlank(message = "标题不能为空!")
     private String title;
 
+    @NotBlank(message = "描述不能为空!")
     private String description;
 
     private Long gmtCreate;
@@ -32,6 +35,7 @@ public class Question implements Serializable {
 
     private Integer likeCount;
 
+    @NotBlank(message = "标签不能为空!")
     private String tag;
 
 }
